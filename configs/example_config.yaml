@@ -1,0 +1,41 @@
+# Experiment settings
+exp_name: icm
+seed: 1
+torch_deterministic: true
+cuda: true
+track: false
+wandb_project_name: cleanRL
+wandb_entity: null
+capture_video: true
+
+# Environment settings
+env_id: SuperMarioBros-1-1-v0
+total_timesteps: 100_000
+num_envs: 8
+
+# PPO hyperparameters
+agent_learning_rate: 1.0e-4
+num_steps: 128
+anneal_lr: true
+gamma: 0.99
+gae_lambda: 0.95
+num_minibatches: 4
+update_epochs: 4
+norm_adv: true
+clip_coef: 0.1
+clip_vloss: true
+ent_coef: 0.01
+vf_coef: 0.5
+agent_max_grad_norm: 0.5
+target_kl: null
+
+# ICM hyperparameters
+reward_mode: intrinsic
+intrinsic_reward_scale: 1.0
+dim_obs_embed: 512
+icm_learning_rate: 1.0e-5
+inverse_loss_weight: 1.0
+forward_loss_weight: 1.0
+icm_max_grad_norm: 1.0
+
+checkpoint_interval: null
